@@ -25,14 +25,21 @@ const config={
        timeout:5*1000
   },
 
-  reporter:'html',
+  reporter: [
+  ['list'],
+  ['html', {
+    outputFolder: 'playwright-report',
+    open: 'never'
+  }]
+],
   
   use: {
 
          browserName:'chromium',
          headless: Boolean(process.env.CI),
-         screenshot: 'on',
-         trace:'on' 
+         screenshot: 'only-on-failure',
+         trace: 'retain-on-failure', 
+         video: 'retain-on-failure'
   },     
 
 };
