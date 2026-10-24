@@ -2,7 +2,7 @@ const {test, expect}=require('@playwright/test');
 
 test('E2E client app flow', async ({browser})=>
 {
-  // execution will start from here 
+
 const context=await browser.newContext();
 const page=await context.newPage();
 
